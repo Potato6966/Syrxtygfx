@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYRXTY - Fortnite Graphics Designer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="bw-mode build-up-mode">
+    <div class="light-overlay"></div>
+    <div class="color-splash-overlay">
+        <div class="splash-content">
+            <h1 class="splash-title">SYRXTY</h1>
+            <button class="add-color-btn">CLICK ME!</button>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">FORTNITE GRAPHICS DESIGNER</div>
+            <h1 class="hero-title">SYRXTY</h1>
+            <p class="hero-subtitle">Craft Visuals That Command Attention</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">View My Work</button>
+                <button class="btn btn-secondary">Get In Touch</button>
+            </div>
+        </div>
+        <div class="hero-bg"></div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <p class="section-subtitle">Explore my latest work across different categories</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card" data-category="thumbnails">
+                    <div class="portfolio-preview">
+                        <div class="portfolio-icon">
+                            <i data-lucide="image"></i>
+                        </div>
+                        <div class="portfolio-count">0 items</div>
+                    </div>
+                    <h3>Thumbnails</h3>
+                    <p>Eye-catching thumbnails for gaming content</p>
+                    <button class="btn btn-secondary portfolio-btn">See More</button>
+                </div>
+                
+                <div class="portfolio-card" data-category="logos">
+                    <div class="portfolio-preview">
+                        <div class="portfolio-icon">
+                            <i data-lucide="layers"></i>
+                        </div>
+                        <div class="portfolio-count">0 items</div>
+                    </div>
+                    <h3>Logos</h3>
+                    <p>Professional brand identity designs</p>
+                    <button class="btn btn-secondary portfolio-btn">See More</button>
+                </div>
+                
+                <div class="portfolio-card" data-category="product-banners">
+                    <div class="portfolio-preview">
+                        <div class="portfolio-icon">
+                            <i data-lucide="layout"></i>
+                        </div>
+                        <div class="portfolio-count">0 items</div>
+                    </div>
+                    <h3>Product Banners</h3>
+                    <p>Promotional banners for products</p>
+                    <button class="btn btn-secondary portfolio-btn">See More</button>
+                </div>
+                
+                <div class="portfolio-card" data-category="product-boxes">
+                    <div class="portfolio-preview">
+                        <div class="portfolio-icon">
+                            <i data-lucide="package"></i>
+                        </div>
+                        <div class="portfolio-count">0 items</div>
+                    </div>
+                    <h3>Product Boxes</h3>
+                    <p>3D product box designs</p>
+                    <button class="btn btn-secondary portfolio-btn">See More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="portfolio-modal" class="portfolio-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 id="modal-title">Portfolio Gallery</h2>
+            <div id="gallery-container" class="gallery-grid">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox-modal" class="lightbox-modal">
+        <div class="lightbox-content">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-prev">&#8249;</button>
+            <button class="lightbox-next">&#8250;</button>
+            <img id="lightbox-image" src="" alt="">
+            <div class="lightbox-info">
+                <h3 id="lightbox-title">Image Title</h3>
+                <p id="lightbox-counter">1 / 10</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <p class="section-subtitle">Milestones and recognition in the industry</p>
+            
+            <div class="achievement-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i data-lucide="trophy"></i>
+                    </div>
+                    <h3>Featured Designer</h3>
+                    <p>The Thumbnail Designer of Your Favorite Creators</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i data-lucide="rocket"></i>
+                    </div>
+                    <h3>Viral Success</h3>
+                    <p>Contributed to multiple 500K+ videos</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <h3>Rapid Growth</h3>
+                    <p>Helped channels grow their views by more than 100x after working with me</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number counter" data-target="60">0+</div>
+                    <div class="stat-label">Reviews</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number counter" data-target="40">0+</div>
+                    <div class="stat-label">GFX Made</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number counter" data-target="30">0+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-section">
+                        <div class="about-header">
+                            <div class="profile-image">
+                                <img src="SYRXTY_pfp/IMG_5510.png" alt="SYRXTY Profile">
+                            </div>
+                            <div class="profile-info">
+                                <h3>The Journey</h3>
+                                <p class="profile-name">SYRXTY</p>
+                            </div>
+                        </div>
+                        <p>Hi! I'm SYRXTY, a passionate Fortnite graphics designer. I started creating thumbnails and graphics about 8 months ago, and since then I've been dedicated to helping content creators stand out with eye-catching designs that boost their views and engagement.</p>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h3>The Impact</h3>
+                        <p>Throughout my journey, I've had the privilege to work with many content creators in the Fortnite community. My designs have helped channels increase their click-through rates and grow their audiences. I focus on creating thumbnails that not only look amazing but also perform well in getting viewers to click.</p>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h3>The Promise</h3>
+                        <p>I take pride in delivering high-quality work that exceeds expectations. Every design is crafted with attention to detail and your brand in mind. My goal is to help you bring your creative vision to life and make your content stand out in the crowded digital space.</p>
+                    </div>
+                </div>
+                
+                <div class="about-showcase">
+                    <div class="showcase-grid">
+                        <div class="showcase-item">
+                            <div class="showcase-placeholder">
+                                <i data-lucide="image"></i>
+                                <span>Thumbnail Design</span>
+                            </div>
+                        </div>
+                        <div class="showcase-item">
+                            <div class="showcase-placeholder">
+                                <i data-lucide="settings"></i>
+                                <span>Custom Graphics</span>
+                            </div>
+                        </div>
+                        <div class="showcase-item">
+                            <div class="showcase-placeholder">
+                                <i data-lucide="zap"></i>
+                                <span>Fast Delivery</span>
+                            </div>
+                        </div>
+                        <div class="showcase-item">
+                            <div class="showcase-placeholder">
+                                <i data-lucide="trending-up"></i>
+                                <span>Performance Focus</span>
+                            </div>
+                        </div>
+                        <div class="showcase-item">
+                            <div class="showcase-placeholder">
+                                <i data-lucide="palette"></i>
+                                <span>Brand Consistency</span>
+                            </div>
+                        </div>
+                        <div class="showcase-item">
+                            <div class="showcase-placeholder">
+                                <i data-lucide="heart"></i>
+                                <span>Client Satisfaction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Pricing</h2>
+            <p class="section-subtitle">Professional Fortnite graphics at competitive prices</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Thumbnails</h3>
+                    <p>Eye-catching thumbnails for your Fortnite content</p>
+                    <div class="price">£1.99</div>
+                    <button class="btn btn-primary">Order Now</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Logo</h3>
+                    <p>Professional logos for your brand identity</p>
+                    <div class="price">£3.99</div>
+                    <button class="btn btn-primary">Order Now</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Profile Picture</h3>
+                    <p>Custom profile pictures for your social media</p>
+                    <div class="price">£1.99</div>
+                    <button class="btn btn-primary">Order Now</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Product Box</h3>
+                    <p>Professional product box designs</p>
+                    <div class="price">£3.99</div>
+                    <button class="btn btn-primary">Order Now</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Product Banner</h3>
+                    <p>Eye-catching banners for your products</p>
+                    <div class="price">£2.99</div>
+                    <button class="btn btn-primary">Order Now</button>
+                </div>
+            </div>
+
+            <div class="process-section">
+                <h2 class="section-title">My Process</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i data-lucide="message-circle"></i>
+                        </div>
+                        <div class="step-content">
+                            <h4>Discussion</h4>
+                            <p>We'll start by discussing your idea and the goals you want to achieve. Having a clear vision of your thumbnail helps me design something that perfectly matches your expectations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i data-lucide="palette"></i>
+                        </div>
+                        <div class="step-content">
+                            <h4>Design</h4>
+                            <p>Using professional softwares, I will design a thumbnail with incredible attention to detail. Each element of the thumbnail will be perfectly crafted to match your expectation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i data-lucide="refresh-cw"></i>
+                        </div>
+                        <div class="step-content">
+                            <h4>Revision</h4>
+                            <p>I'll discuss with you to ensure the thumbnail meets all your expectations. Your feedback will guide any necessary revisions, making sure you're completely satisfied with the final result.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i data-lucide="download"></i>
+                        </div>
+                        <div class="step-content">
+                            <h4>Delivery</h4>
+                            <p>With your approval, I'll deliver the final HD thumbnail via Google Drive in your preferred format, ensuring a smooth, easy, and fast experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <p class="section-subtitle">Get in touch through any of these platforms</p>
+            
+            <div class="contact-grid">
+                <a href="https://x.com/syrxtyfn" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <i data-lucide="twitter"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h4>X</h4>
+                        <p>@syrxtyfn</p>
+                    </div>
+                </a>
+                
+                <a href="https://youtube.com/@syrxtyfn" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <i data-lucide="play"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h4>YouTube</h4>
+                        <p>@syrxtyfn</p>
+                    </div>
+                </a>
+                
+                <a href="https://tiktok.com/@syrxty" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <i data-lucide="video"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h4>TikTok</h4>
+                        <p>@syrxty</p>
+                    </div>
+                </a>
+                
+                <a href="https://discord.gg/tcnhqygZN4" target="_blank" class="contact-card contact-discord">
+                    <div class="contact-icon">
+                        <i data-lucide="message-circle"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h4>Discord</h4>
+                        <p>Join Server</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 SYRXTY. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
