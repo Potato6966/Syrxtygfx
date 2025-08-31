@@ -174,6 +174,59 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
+        
+        // Preload images for faster display
+        preloadImages();
+    }
+    
+    function preloadImages() {
+        // Create hidden images to preload them
+        const preloadContainer = document.createElement('div');
+        preloadContainer.style.position = 'absolute';
+        preloadContainer.style.left = '-9999px';
+        preloadContainer.style.visibility = 'hidden';
+        document.body.appendChild(preloadContainer);
+        
+        // Preload all category images
+        Object.keys(portfolioCategories).forEach(category => {
+            const categoryInfo = portfolioCategories[category];
+            const commonFilePatterns = [
+                '001', '002', '003', '004', '005', '006', '007', '008', '009', '010',
+                '011', '012', '013', '014', '015', '016', '017', '018', '019', '020',
+                '021', '022', '023', '024', '025', '026', '027', '028', '029', '030',
+                'image', 'banner', 'logo', 'thumbnail', 'design', 'product',
+                '50skin', '150skin', '300skin', 'precise_bo6_internal', 'PRecise_fn_priv',
+                'precise_perm_spf', 'precise_temp_woofer', 'Products_Banner',
+                'Velocity_Fortnite_Private', 'Venza_Accounts', 'Venza_Fortnite_Private',
+                'Venza_Fortnite_Slotted', 'Venza_Fortnite_Ultimate', 'Venza_Fortnite_Unreal',
+                'Venza_Spoofer', 'Venza_Valorant_INt',
+                'grow_a_garden_fa_account', 'neat_cod_priavte', 'neat_fn_private',
+                'neat_temp_spf', 'primal_cod_unlock_all', 'primal_fn_slotted',
+                'roblox_executors', 'roblox_replay', 'rubux_account_fa',
+                'zylo_fn_external', 'zylo_fn_ultimate', 'zylo_perm_spoofer',
+                'zylo_temp_spoofer', 'ZYRO_fn_og', 'ZYRO_fn_private',
+                'ZYRO_fn_pro', 'ZYRO_fn_public', 'ZYRO_fn_ultimate',
+                '1401907146664181951_001', '1401907146664181951_002', '1401907146664181951_003',
+                '1401907146664181951_004', '1401907146664181951_005', '1401907146664181951_006'
+            ];
+            
+            commonFilePatterns.forEach(pattern => {
+                categoryInfo.extensions.forEach(ext => {
+                    const imagePath = `${categoryInfo.folder}${pattern}.${ext}`;
+                    const preloadImg = document.createElement('img');
+                    preloadImg.src = imagePath;
+                    preloadContainer.appendChild(preloadImg);
+                });
+            });
+        });
+        
+        // Also preload thumbnail images
+        backgroundImages.forEach(filename => {
+            const imagePath = `Thumbnails/${filename}`;
+            const preloadImg = document.createElement('img');
+            preloadImg.src = imagePath;
+            preloadContainer.appendChild(preloadImg);
+        });
     }
 
     function updatePortfolioCount(category, count) {
@@ -211,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'gallery-item';
                 galleryItem.innerHTML = `
-                    <img src="${image.path}" alt="${image.name}" loading="lazy">
+                    <img src="${image.path}" alt="${image.name}">
                     <div class="gallery-item-overlay">
                         <h4>${image.name}</h4>
                     </div>
