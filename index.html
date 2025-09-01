@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <link rel="preload" as="image" href="SYRXTY_pfp/IMG_5510.png">
+    <link rel="preload" as="image" href="backround/1401907185612755025_001.png" fetchpriority="high">
+    <link rel="preload" as="image" href="backround/1401907185612755025_002.png" fetchpriority="high">
+    <link rel="preload" as="image" href="backround/1401907185612755025_003.png" fetchpriority="high">
 </head>
 <body class="bw-mode build-up-mode">
     <div class="light-overlay"></div>
@@ -19,6 +24,9 @@
 
     <nav class="navbar">
         <div class="nav-container">
+            <div class="nav-logo">
+                <span>SYRXTY</span>
+            </div>
             <div class="nav-links">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#portfolio" class="nav-link">Portfolio</a>
@@ -27,6 +35,10 @@
                 <a href="#pricing" class="nav-link">Pricing</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
+            <button class="cart-button" onclick="openCart()">
+                <i data-lucide="shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </button>
         </div>
     </nav>
 
@@ -54,7 +66,10 @@
                         <div class="portfolio-icon">
                             <i data-lucide="image"></i>
                         </div>
-                        <div class="portfolio-count">0 items</div>
+                        <div class="portfolio-count">
+                            <div class="loading-spinner"></div>
+                            <span class="count-text">Loading...</span>
+                        </div>
                     </div>
                     <h3>Thumbnails</h3>
                     <p>Eye-catching thumbnails for gaming content</p>
@@ -66,7 +81,10 @@
                         <div class="portfolio-icon">
                             <i data-lucide="layers"></i>
                         </div>
-                        <div class="portfolio-count">0 items</div>
+                        <div class="portfolio-count">
+                            <div class="loading-spinner"></div>
+                            <span class="count-text">Loading...</span>
+                        </div>
                     </div>
                     <h3>Logos</h3>
                     <p>Professional brand identity designs</p>
@@ -78,7 +96,10 @@
                         <div class="portfolio-icon">
                             <i data-lucide="layout"></i>
                         </div>
-                        <div class="portfolio-count">0 items</div>
+                        <div class="portfolio-count">
+                            <div class="loading-spinner"></div>
+                            <span class="count-text">Loading...</span>
+                        </div>
                     </div>
                     <h3>Product Banners</h3>
                     <p>Promotional banners for products</p>
@@ -90,7 +111,10 @@
                         <div class="portfolio-icon">
                             <i data-lucide="package"></i>
                         </div>
-                        <div class="portfolio-count">0 items</div>
+                        <div class="portfolio-count">
+                            <div class="loading-spinner"></div>
+                            <span class="count-text">Loading...</span>
+                        </div>
                     </div>
                     <h3>Product Boxes</h3>
                     <p>3D product box designs</p>
@@ -105,7 +129,10 @@
             <button class="modal-close">&times;</button>
             <h2 id="modal-title">Portfolio Gallery</h2>
             <div id="gallery-container" class="gallery-grid">
-
+                <div class="gallery-loading">
+                    <div class="gallery-loading-spinner"></div>
+                    <p>Loading images...</p>
+                </div>
             </div>
         </div>
     </div>
@@ -253,40 +280,40 @@
             <p class="section-subtitle">Professional Fortnite graphics at competitive prices</p>
             
             <div class="pricing-grid">
-                <div class="pricing-card featured">
+                <div class="pricing-card featured" data-product='{"name": "Thumbnails", "price": 1.99, "description": "Eye-catching thumbnails for your Fortnite content"}'>
                     <div class="popular-badge">Most Popular</div>
                     <h3>Thumbnails</h3>
                     <p>Eye-catching thumbnails for your Fortnite content</p>
                     <div class="price">£1.99</div>
-                    <button class="btn btn-primary">Order Now</button>
+                    <button class="btn btn-primary add-to-cart">Add to Cart</button>
                 </div>
                 
-                <div class="pricing-card">
+                <div class="pricing-card" data-product='{"name": "Logo", "price": 3.99, "description": "Professional logos for your brand identity"}'>
                     <h3>Logo</h3>
                     <p>Professional logos for your brand identity</p>
                     <div class="price">£3.99</div>
-                    <button class="btn btn-primary">Order Now</button>
+                    <button class="btn btn-primary add-to-cart">Add to Cart</button>
                 </div>
                 
-                <div class="pricing-card">
+                <div class="pricing-card" data-product='{"name": "Profile Picture", "price": 1.99, "description": "Custom profile pictures for your social media"}'>
                     <h3>Profile Picture</h3>
                     <p>Custom profile pictures for your social media</p>
                     <div class="price">£1.99</div>
-                    <button class="btn btn-primary">Order Now</button>
+                    <button class="btn btn-primary add-to-cart">Add to Cart</button>
                 </div>
                 
-                <div class="pricing-card">
+                <div class="pricing-card" data-product='{"name": "Product Box", "price": 3.99, "description": "Professional product box designs"}'>
                     <h3>Product Box</h3>
                     <p>Professional product box designs</p>
                     <div class="price">£3.99</div>
-                    <button class="btn btn-primary">Order Now</button>
+                    <button class="btn btn-primary add-to-cart">Add to Cart</button>
                 </div>
                 
-                <div class="pricing-card">
+                <div class="pricing-card" data-product='{"name": "Product Banner", "price": 2.99, "description": "Eye-catching banners for your products"}'>
                     <h3>Product Banner</h3>
                     <p>Eye-catching banners for your products</p>
                     <div class="price">£2.99</div>
-                    <button class="btn btn-primary">Order Now</button>
+                    <button class="btn btn-primary add-to-cart">Add to Cart</button>
                 </div>
             </div>
 
@@ -391,6 +418,30 @@
             <p>&copy; 2025 SYRXTY. All rights reserved.</p>
         </div>
     </footer>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Shopping Cart</h2>
+                <button class="cart-close" onclick="closeCart()">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <div class="empty-cart">
+                    <i data-lucide="shopping-cart"></i>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: £<span id="cart-total">0.00</span></span>
+                </div>
+                <div class="cart-buttons">
+                    <button class="btn btn-secondary" onclick="clearCart()">Clear Cart</button>
+                    <button class="btn btn-primary" onclick="checkout()" id="checkout-btn" disabled>Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
     <script>
